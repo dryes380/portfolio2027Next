@@ -1,14 +1,30 @@
 .footerContainer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 3.5rem;    
-      background: lightblue;   
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3.5rem;    
+  background: lightblue;   
 }
 
 .footerContent {
   display: flex;
-  gap: 34%;
+  gap: 30%;
   margin-top: 20px;
   margin-left: 10px;
+}
+
+.footerTime {
+  width: 200px;
+}
+
+.footerRights {
+  width: 300px
+}
+
+.footerSocialIcons {
+  width: 100px;
+  position: absolute;
+  left: 93%;
+  bottom: 8px;
+  
 }
