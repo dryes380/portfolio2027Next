@@ -3,10 +3,8 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <header className="head">
-      <div
-        style={{ display: "flex", gap: "45%", paddingTop: 20, paddingLeft: 10 }}
-      >
+    <header className="headerContainer">
+      <div className="headerContent">
         <div>BLOG</div>
         <div>Portfolio</div>
         <div>FR/EN</div>

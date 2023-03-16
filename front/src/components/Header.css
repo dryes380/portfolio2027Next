@@ -1,7 +1,14 @@
-.head {
+.headerContainer {
   position: sticky;
   top:0;
   height: 3.5em;
   background: lightblue;
   text-align: center;
+}
+
+.headerContent {
+  display: flex;
+  gap: 45%;
+  padding-top: 20px;
+  padding-left: 10px;
 }

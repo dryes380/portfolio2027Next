@@ -3,14 +3,16 @@ import FooterTest from "./components/Footer";
 
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <>
       <Header />
-      <div style={{ margin: 20 }}>Test</div>
+      <div className="Container">
+        <div className="Content">Test</div>
+      </div>
       <FooterTest />
-    </div>
+    </>
   );
-}
+};
 
 export default App;
