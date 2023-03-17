@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { SocialIcon } from "react-social-icons";
+import { useTranslation } from "react-i18next";
+
 import "./Footer.css";
 
 const Footer = () => {
@@ -13,13 +15,14 @@ const Footer = () => {
   setTimeout(() => {
     GetTime();
   }, 1000);
+  const { t } = useTranslation();
 
   const str = new Date().toLocaleString("fr-FR", { timeZone: "UTC" });
   return (
     <footer className="footerContainer">
       <div className="footerContent">
         <div className="footerTime">{str}</div>
-        <div className="footerRights">Droits d'auteurs Vincent Kouoï 2023</div>
+        <div className="footerRights">{t("author")}</div>
         <div className="footerSocialIcons">
           <a href="https://www.linkedin.com/in/vincent-kouoi-5079b1b1/">
             <SocialIcon
