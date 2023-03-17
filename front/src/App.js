@@ -1,6 +1,9 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import FooterTest from "./components/Footer";
 
+import Blog from "./container/Blog";
+import Portfolio from "./container/Portfolio";
 import "./App.css";
 
 const App = () => {
@@ -8,7 +11,11 @@ const App = () => {
     <>
       <Header />
       <div className="Container">
-        <div className="Content">Test</div>
+        <Routes>
+          <Route index element={<Blog />} />
+          <Route path="portfolio" element={<Portfolio />} />
+        </Routes>
+        {/* <div className="Content">Test</div> */}
       </div>
       <FooterTest />
     </>

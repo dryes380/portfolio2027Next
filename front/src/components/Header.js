@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
@@ -12,8 +13,8 @@ const Header = () => {
   return (
     <header className="headerContainer">
       <div className="headerContent">
-        <div>BLOG</div>
-        <div>Portfolio</div>
+        <Link to="/">BLOG</Link>
+        <Link to="portfolio">Portfolio</Link>
         <div className="headerTranslation">
           <button onClick={() => changeLanguage("fr")}>FR</button>
           <button onClick={() => changeLanguage("en")}>EN</button>
