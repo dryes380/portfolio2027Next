@@ -14,9 +14,7 @@ const Header = () => {
       <div className="headerContent">
         <div>BLOG</div>
         <div>Portfolio</div>
-        <div
-          style={{ display: "flex", position: "absolute", right: 26, gap: 6 }}
-        >
+        <div className="headerTranslation">
           <button onClick={() => changeLanguage("fr")}>FR</button>
           <button onClick={() => changeLanguage("en")}>EN</button>
         </div>
