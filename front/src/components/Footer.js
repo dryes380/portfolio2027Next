@@ -15,9 +15,12 @@ const Footer = () => {
   setTimeout(() => {
     GetTime();
   }, 1000);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const str = new Date().toLocaleString("fr-FR", { timeZone: "UTC" });
+  const str =
+    i18n.language === "fr"
+      ? new Date().toLocaleString("fr-FR", { timeZone: "UTC" })
+      : new Date().toLocaleString("en-US", { timeZone: "UTC" });
   return (
     <footer className="footerContainer">
       <div className="footerContent">
