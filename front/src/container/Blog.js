@@ -1,37 +1,24 @@
 import React from "react";
 import { Articles } from "../data/Articles";
 
+import "./Blog.css";
+
 const Blog = () => {
   return (
     <div className="Content">
-      <h1 style={{ textAlign: "center" }}> Articles</h1>
+      <h1 className="blogGeneral"> Articles</h1>
       {Articles.map((data) => {
         return (
-          <div style={{ display: "flex", gap: 10 }}>
-            <div
-              style={{
-                width: "100%",
-                border: "2px solid black",
-                height: 300,
-                padding: 10,
-                margin: 10,
-              }}
-            >
-              <div style={{ display: "flex", gap: "40%" }}>
+          <div className="blogArticles">
+            <div className="blogArticlesElements">
+              <div className="blogHeaders">
                 <div>{data.release}</div>
                 <div>{data.title}</div>
                 <div>{data.author}</div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  margin: 10,
-                  position: "relative",
-                  right: 5,
-                }}
-              >
-                <div style={{ width: "20%", height: 200 }}>photo</div>
-                <div style={{ width: "80%" }}>{data.content}</div>
+              <div className="blogContainers">
+                <div className="blogPhoto">photo</div>
+                <div className="blogContent">{data.content}</div>
               </div>
             </div>
           </div>

@@ -15,7 +15,6 @@ const App = () => {
           <Route index element={<Blog />} />
           <Route path="portfolio" element={<Portfolio />} />
         </Routes>
-        {/* <div className="Content">Test</div> */}
       </div>
       <FooterTest />
     </>
