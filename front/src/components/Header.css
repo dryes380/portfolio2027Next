@@ -4,6 +4,7 @@
   height: 3.5em;
   background: lightblue;
   text-align: center;
+  z-index: 3;
 }
 
 .headerContent {

@@ -1,3 +1,9 @@
+.styleDefault {
+  height: 220px;
+  color: white;
+  background-color: black;
+}
+
 .blogGeneral {
 	text-align: center;
 }
@@ -5,36 +11,20 @@
 .blogArticles {
 	display: flex;
 	gap: 10px;
-}
-
-.blogArticlesElements {
-	width: 100%;
-	border: 2px solid black;
-	height: 300px;
-	padding: 10px;
-	margin: 10px;
 
 }
 
-.blogHeaders {
-	display: flex;
-	gap: 40%;
-}
-.blogContainers {
-	display: flex;
-	margin: 10px;
-	position: relative;
-	right: 5px;
-}
-.blogPhoto {
-width: 20%;
-height: 200px;
-}
-.blogContent {
-	width: 80%;
-
+.blogCardContent {
+	width: 33%;
 }
 
+.blogContentAuthor {
+	float: left;
+}
+
+.blogContentRedirect {
+	float: right;
+}
 
 .ant-carousel .slick-prev,
 .ant-carousel .slick-next,

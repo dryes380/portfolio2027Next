@@ -4,11 +4,7 @@ import { Card, Carousel } from 'antd'
 import "./Blog.css";
 
 const Blog = () => {
-  const styleDefaults = {
-    height: 220,
-    color: "white",
-    backgroundColor: 'black'
-  };
+
 
   return (
     <div className="Content">
@@ -16,29 +12,26 @@ const Blog = () => {
       <Carousel arrows prevArrow={<div />} nextArrow={<div />}>
         <div>
           <h3
-            style={{
-              backgroundColor: "red",
-              ...styleDefaults
-            }}
+            className='styleDefault'
           >
             1
           </h3>
         </div>
         <div>
-          <h3 style={{ backgroundColor: "teal", ...styleDefaults }}>2</h3>
+          <h3 className='styleDefaults'>2</h3>
         </div>
       </Carousel>
       <br />
-      <div style={{ display: "flex" }}>
+      <div className='blogArticles'>
         {Articles.map(data => {
           return (
             <>
-              <Card title={data.title} bordered style={{ width: '33%' }} extra={data.release}>
+              <Card title={data.title} bordered className='blogCardContent' extra={data.release}>
                 {data.content}
                 <br />
                 <div>
-                  <p style={{ float: "left" }}>{data.author}</p>
-                  <p style={{ float: "right" }}>redirect</p>
+                  <p className='blogContentAuthor'>{data.author}</p>
+                  <p className='blogContentRedirect'>redirect</p>
                 </div>
               </Card>
             </>
