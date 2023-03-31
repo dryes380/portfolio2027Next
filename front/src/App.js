@@ -6,10 +6,13 @@ import Blog from "./container/Blog";
 import Portfolio from "./container/Portfolio";
 import "./App.css";
 
+import LoadingPage from "./helpers/LoadingPage";
+
 const App = () => {
   return (
     <>
       <Header />
+      <LoadingPage />
       <div className="Container">
         <Routes>
           <Route index element={<Blog />} />
