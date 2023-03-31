@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Articles } from "../data/Articles";
 import { Card, Carousel } from 'antd'
 import "./Blog.css";
 import logo from '../logo.svg'
 
 const Blog = () => {
+
+  const articlesSortByTitle =
+    [...Articles.sort((a, b) => a.release > b.release ? 1 : -1)]
+
+  const [initial, setInitial] = useState([...articlesSortByTitle])
+  const setPersonal = [...initial.filter(data => data.type === 'personal')]
+  const setPrivate = [...initial.filter(data => data.type === 'private')]
+  const [sortActive, setActive] = useState(false)
+  const toggleSortHandler = () => setActive(a => !a)
+
+  useEffect(() => {
+    if (sortActive) {
+      setInitial(
+        [...Articles].sort((a, b) => {
+          if (a.title.toUpperCase() < b.title.toUpperCase()) return -1;
+          if (a.title.toUpperCase() > b.title.toUpperCase()) return 1;
+        })
+      )
+    } else {
+      setInitial(Articles)
+    }
+  }, [sortActive])
 
 
   return (
@@ -29,14 +51,25 @@ const Blog = () => {
         </div>
       </Carousel>
       <br />
+      <div className='styleButton'>
+        <div className='buttonFilter'>
+          <button onClick={() => setInitial(initial)}>All</button>
+          <button onClick={() => setInitial(setPersonal)}>personal</button>
+          <button onClick={() => setInitial(setPrivate)}>private</button>
+        </div>
+        <div className='buttonSort'>
+          <button onClick={() => toggleSortHandler()}>Title</button>
+        </div>
+      </div>
+      <br />
       <div className='blogArticles'>
-        {Articles.map(data => {
+        {initial.map(data => {
           return (
             <>
               <Card title={data.title} bordered className='blogCardContent' extra={data.release}>
-                {data.content}
+                <div>{data.content}</div>
                 <br />
-                <div>
+                <div style={{ position: 'absolute', bottom: 0, width: '90%' }}>
                   <p className='blogContentAuthor'>{data.author}</p>
                   <p className='blogContentRedirect'>redirect</p>
                 </div>

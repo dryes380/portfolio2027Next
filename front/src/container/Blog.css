@@ -27,26 +27,36 @@
   margin: 10px;
   width: 43%;
 }
+
+.styleButton {
+  display: flex;
+}
+.buttonFilter {
+  display: flex;
+  gap: 10px;
+}
+.buttonSort {
+  margin-left: auto;
+  display:flex;
+  gap: 10px;
+}
 .blogGeneral {
 	text-align: center;
 }
 
 .blogArticles {
-	display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
 	gap: 10px;
-
 }
 
-.blogCardContent {
-	width: 33%;
-}
 
 .blogContentAuthor {
 	float: left;
 }
 
 .blogContentRedirect {
-	float: right;
+	text-align: end;
 }
 
 .ant-carousel .slick-prev,
