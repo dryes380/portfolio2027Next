@@ -4,6 +4,29 @@
   background-color: black;
 }
 
+.styleTopTitle {
+  text-align: center
+}
+
+.styleTopCarousel {
+  display: flex;
+}
+.styleTopContentText {
+  height: 145px;
+  padding-left:20px ;
+  margin: 10px;
+  position: relative;
+  bottom: 25px;
+  width: 50%;
+}
+
+.styleTopContentPicture {
+  height: 130px;
+  bottom: 25px;
+  position: relative;
+  margin: 10px;
+  width: 43%;
+}
 .blogGeneral {
 	text-align: center;
 }

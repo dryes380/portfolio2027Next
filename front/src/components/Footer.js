@@ -19,8 +19,8 @@ const Footer = () => {
 
   const str =
     i18n.language === "fr"
-      ? new Date().toLocaleString("fr-FR", { timeZone: "UTC" })
-      : new Date().toLocaleString("en-US", { timeZone: "UTC" });
+      ? new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" })
+      : new Date().toLocaleString("en-US", { timeZone: "Europe/Paris" });
   return (
     <footer className="footerContainer">
       <div className="footerContent">
