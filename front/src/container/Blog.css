@@ -34,11 +34,13 @@
 .buttonFilter {
   display: flex;
   gap: 10px;
+  cursor: pointer;
 }
 .buttonSort {
   margin-left: auto;
   display:flex;
   gap: 10px;
+  cursor: pointer;
 }
 .blogGeneral {
 	text-align: center;
@@ -51,6 +53,11 @@
 }
 
 
+.blogCardContent {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+}
 .blogContentAuthor {
 	float: left;
 }

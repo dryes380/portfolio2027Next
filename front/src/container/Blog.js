@@ -4,14 +4,17 @@ import { Card, Carousel } from 'antd'
 import "./Blog.css";
 import logo from '../logo.svg'
 
+import FilterPills from "../helpers/FilterPills";
+import SortPills from "../helpers/SortPills";
+
 const Blog = () => {
 
-  const articlesSortByTitle =
-    [...Articles.sort((a, b) => a.release > b.release ? 1 : -1)]
+  const articlesSortByTitle = [...Articles.sort((a, b) => a.release > b.release ? 1 : -1)]
 
   const [initial, setInitial] = useState([...articlesSortByTitle])
-  const setPersonal = [...initial.filter(data => data.type === 'personal')]
-  const setPrivate = [...initial.filter(data => data.type === 'private')]
+  const setPersonal = [...initial?.filter(data => data.type === 'personal')]
+  const setPrivate = [...initial?.filter(data => data.type === 'private')]
+
   const [sortActive, setActive] = useState(false)
   const toggleSortHandler = () => setActive(a => !a)
 
@@ -27,7 +30,6 @@ const Blog = () => {
       setInitial(Articles)
     }
   }, [sortActive])
-
 
   return (
     <div className="Content">
@@ -53,12 +55,10 @@ const Blog = () => {
       <br />
       <div className='styleButton'>
         <div className='buttonFilter'>
-          <button onClick={() => setInitial(initial)}>All</button>
-          <button onClick={() => setInitial(setPersonal)}>personal</button>
-          <button onClick={() => setInitial(setPrivate)}>private</button>
+          <FilterPills initial={initial} setInitial={setInitial} setPersonal={setPersonal} setPrivate={setPrivate} />
         </div>
         <div className='buttonSort'>
-          <button onClick={() => toggleSortHandler()}>Title</button>
+          <SortPills toggleSortHandler={toggleSortHandler} />
         </div>
       </div>
       <br />
@@ -66,10 +66,10 @@ const Blog = () => {
         {initial.map(data => {
           return (
             <>
-              <Card title={data.title} bordered className='blogCardContent' extra={data.release}>
+              <Card title={data.title} bordered extra={data.release}>
                 <div>{data.content}</div>
                 <br />
-                <div style={{ position: 'absolute', bottom: 0, width: '90%' }}>
+                <div className='blogCardContent'>
                   <p className='blogContentAuthor'>{data.author}</p>
                   <p className='blogContentRedirect'>redirect</p>
                 </div>
