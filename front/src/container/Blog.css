@@ -52,6 +52,9 @@
 	gap: 10px;
 }
 
+.blogContent {
+  height: 200px;
+}
 
 .blogCardContent {
   position: absolute;
