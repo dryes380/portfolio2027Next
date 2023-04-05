@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react'
-
+import React from 'react'
+import './LoadingPage.css'
 export const LoadingPage = () => {
-	const [loading, setLoading] = useState(false)
-
-	useEffect(() => {
-		setLoading(true)
-		setTimeout(() => {
-			setLoading(false)
-		}, 3000)
-	}, [])
-
 
 	return (
-		<>
-			{loading ? <>...loading</>
-				: null}
-		</>
+		<div style={{ textAlign: 'center', height: 660 }}>
+			<div className='progress'>
+				<div className='color'></div>
+			</div>
+		</div>
 	)
 }
 

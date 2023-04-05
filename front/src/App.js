@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react'
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import FooterTest from "./components/Footer";
@@ -9,15 +10,24 @@ import "./App.css";
 import LoadingPage from "./helpers/LoadingPage";
 
 const App = () => {
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+  }, [])
   return (
     <>
       <Header />
-      <LoadingPage />
+
       <div className="Container">
-        <Routes>
-          <Route index element={<Blog />} />
-          <Route path="portfolio" element={<Portfolio />} />
-        </Routes>
+        {loading ? <LoadingPage /> :
+          <Routes>
+            <Route index element={<Blog />} />
+            <Route path="portfolio" element={<Portfolio />} />
+          </Routes>
+        }
       </div>
       <FooterTest />
     </>
