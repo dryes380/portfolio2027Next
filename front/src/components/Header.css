@@ -11,11 +11,11 @@
   display: flex;
   gap: 45%;
   padding-top: 20px;
-  padding-left: 10px;
+  padding-left: 32px;
 }
 .headerTranslation {
   display: flex;
   position: absolute;
-  right: 26px;
+  right: 34px;
   gap: 6px;
 }
