@@ -51,7 +51,7 @@ const Blog = () => {
       <br />
       <div className='styleButton'>
         <div className='buttonFilter'>
-          <FilterPills initial={initial} setInitial={setInitial} setPersonal={setPersonal} setPrivate={setPrivate} />
+          <FilterPills setInitial={setInitial} setPersonal={setPersonal} setPrivate={setPrivate} articlesSortByTitle={articlesSortByTitle} />
         </div>
         <div className='buttonSort'>
           <SortPills toggleSortHandler={toggleSortHandler} />
