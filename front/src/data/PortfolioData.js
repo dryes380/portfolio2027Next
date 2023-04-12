@@ -16,7 +16,7 @@ export const PortFolioData = [
 		description: 'web site for movies, manga and games',
 		stack: 'React.js, Context API',
 		picture: 'https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80',
-		linkRedirect: '',
+		linkRedirect: 'https://apibooks.netlify.app/',
 		codeSource: '',
 		date: '',
 	},
