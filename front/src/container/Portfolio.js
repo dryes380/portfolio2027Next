@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, Divider, Modal } from 'antd'
 import { PortFolioData } from '../data/PortfolioData'
 import { GithubOutlined } from '@ant-design/icons';
+import './Portfolio.css'
 
 const Portfolio = () => {
   const { Meta } = Card
@@ -18,18 +19,16 @@ const Portfolio = () => {
 
   return (
     <div className="Content">
-      <h1 style={{ textAlign: "center" }}>Portfolio</h1>
+      <h1 className='portfolioGeneral'>Portfolio</h1>
       <Divider />
-      <div className='blogArticles'>
+      <div className='portfolioProjects'>
         {PortFolioData.map((data => {
           return (
             <Card
-              style={{
-                width: 300,
-                height: 340
-              }}
+              className='portfolioCards'
               cover={
                 <img
+                  className='portfolioPictures'
                   alt="example"
                   src={data.picture}
                 />

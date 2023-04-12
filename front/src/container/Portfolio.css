@@ -1,0 +1,20 @@
+.portfolioGeneral {
+	text-align: center;
+}
+.portfolioProjects {
+	display: grid;
+  grid-template-columns: auto auto auto;
+	gap: 14px;
+}
+.portfolioCards {
+	width: 300px;
+	height: 370px;
+}
+.portfolioPictures {
+	width: 300px;
+	height: 200px;
+}
+
+.ant-card-body {
+	height: 100px;
+}
