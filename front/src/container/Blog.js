@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Articles } from "../data/Articles";
-import { Card, Carousel } from 'antd'
+import { Card, Carousel, Divider } from 'antd'
 import "./Blog.css";
 import logo from '../logo.svg'
 
@@ -34,6 +34,7 @@ const Blog = () => {
   return (
     <div className="Content">
       <h1 className="blogGeneral"> Articles</h1>
+      <Divider />
       <Carousel arrows dots={false} prevArrow={<div />} nextArrow={<div />}>
         {initial.map(data =>
           <div className='styleDefault'>
@@ -61,16 +62,14 @@ const Blog = () => {
       <div className='blogArticles'>
         {initial.map(data => {
           return (
-            <>
-              <Card title={data.title} bordered extra={data.release}>
-                <div className='blogContent'>{data.content}</div>
-                <br />
-                <div className='blogCardContent'>
-                  <p className='blogContentAuthor'>{data.author}</p>
-                  <p className='blogContentRedirect'>redirect</p>
-                </div>
-              </Card>
-            </>
+            <Card title={data.title} bordered extra={data.release}>
+              <div className='blogContent'>{data.content}</div>
+              <br />
+              <div className='blogCardContent'>
+                <p className='blogContentAuthor'>{data.author}</p>
+                <p className='blogContentRedirect'>redirect</p>
+              </div>
+            </Card>
           )
         })}
       </div>

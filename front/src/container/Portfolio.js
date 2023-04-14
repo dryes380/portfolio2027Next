@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Divider, Modal } from 'antd'
+import { Card, Divider, Modal, Tooltip } from 'antd'
 import { PortFolioData } from '../data/PortfolioData'
 
 import { GithubOutlined, QuestionCircleOutlined } from '@ant-design/icons';
@@ -8,12 +8,11 @@ import './Portfolio.css'
 const Portfolio = () => {
   const { Meta } = Card
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
+  const [contentTitle, setContentTitle] = useState("");
+  const [contentStack, setContentStack] = useState('')
+  const [contentDate, setContentDate] = useState('')
+  const [contentPicture, setContentPicture] = useState('')
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -36,18 +35,24 @@ const Portfolio = () => {
                 />
               }
               actions={[
-                <GithubOutlined key='source' onClick={() => window.open(data.codeSource, 'source')} />,
-                <QuestionCircleOutlined key='details' onClick={showModal} />
+                <Tooltip title='Link to source code'><GithubOutlined key='source' onClick={() => window.open(data.codeSource, 'source')} /></Tooltip>,
+                <Tooltip title='Details project'><QuestionCircleOutlined key='details' onClick={() => { setIsModalOpen(true); setContentTitle(data.title); setContentStack(data.stack); setContentDate(data.date); setContentPicture(data.picture) }} /></Tooltip>
               ]}
             >
               <Meta
                 title={data.title}
                 description={data.description}
               />
-              <Modal title={data.title} open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                <p>{data.title}</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+              <Modal footer={null} title={contentTitle} open={isModalOpen} centered onCancel={handleCancel}>
+                <div style={{ display: "flex", gap: 160 }}>
+                  <div style={{ textAlign: "left" }}>
+                    <div>Stack:{contentStack}</div>
+                    <div>Date Création:{contentDate}</div>
+                  </div>
+                  <div style={{ float: 'right' }}>
+                    <img style={{ width: 100, height: 70 }} src={contentPicture} />
+                  </div>
+                </div>
               </Modal>
             </Card>
           )

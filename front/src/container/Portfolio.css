@@ -9,13 +9,12 @@
 .portfolioCards {
 	width: 300px;
 	height: 350px;
+	.ant-card-body {
+		height: 100px;
+	}
 }
 .portfolioPictures {
 	width: 300px;
 	height: 200px;
 	cursor: pointer;
-}
-
-.ant-card-body {
-	height: 100px;
 }
