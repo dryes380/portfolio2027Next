@@ -18,3 +18,16 @@
 	height: 200px;
 	cursor: pointer;
 }
+
+.portfolioModal {
+	display: flex;
+	gap: 160px;
+}
+
+.modalDetails{
+	text-align: left;
+}
+.modalPicture {
+	width: 100px;
+	height: 70px;
+}

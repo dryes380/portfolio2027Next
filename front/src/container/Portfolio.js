@@ -44,14 +44,12 @@ const Portfolio = () => {
                 description={data.description}
               />
               <Modal footer={null} title={contentTitle} open={isModalOpen} centered onCancel={handleCancel}>
-                <div style={{ display: "flex", gap: 160 }}>
-                  <div style={{ textAlign: "left" }}>
+                <div className='portfolioModal'>
+                  <div className='modalDetails'>
                     <div>Stack:{contentStack}</div>
                     <div>Date Création:{contentDate}</div>
                   </div>
-                  <div style={{ float: 'right' }}>
-                    <img style={{ width: 100, height: 70 }} src={contentPicture} />
-                  </div>
+                  <img className='modalPicture' src={contentPicture} />
                 </div>
               </Modal>
             </Card>
