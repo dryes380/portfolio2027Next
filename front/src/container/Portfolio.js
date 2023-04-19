@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Card, Divider, Modal, Tooltip } from 'antd'
-import { PortFolioData } from '../data/PortfolioData'
-
 import { GithubOutlined, QuestionCircleOutlined } from '@ant-design/icons';
+
+import { PortFolioData } from '../data/PortfolioData'
 import './Portfolio.css'
 
 const Portfolio = () => {

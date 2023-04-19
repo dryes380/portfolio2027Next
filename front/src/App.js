@@ -5,8 +5,10 @@ import FooterTest from "./components/Footer";
 
 import Blog from "./container/Blog";
 import Portfolio from "./container/Portfolio";
+import ContentBlog from './components/ContentBlog'
 import "./App.css";
 
+import { Articles } from './data/Articles'
 import LoadingPage from "./helpers/LoadingPage";
 
 const App = () => {
@@ -20,12 +22,14 @@ const App = () => {
   return (
     <>
       <Header />
-
       <div className="Container">
         {loading ? <LoadingPage /> :
           <Routes>
             <Route index element={<Blog />} />
             <Route path="portfolio" element={<Portfolio />} />
+            {Articles.map(data =>
+              <Route exact path={data.title} element={<ContentBlog data={data} />} />
+            )}
           </Routes>
         }
       </div>
