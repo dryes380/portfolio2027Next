@@ -41,7 +41,7 @@ const Blog = () => {
           <h1 className="blogGeneral"> Articles</h1>
           <Divider />
           <Carousel arrows dots={false} prevArrow={<div />} nextArrow={<div />}>
-            {initial.map(data =>
+            {articlesSortByTitle.slice(0, 3).map(data =>
               <div className='styleDefault'>
                 <>
                   <h3 className='styleTopTitle'>{data.title}</h3>
