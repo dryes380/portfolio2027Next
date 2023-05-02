@@ -16,8 +16,8 @@ const Header = () => {
         <Link to="/">BLOG</Link>
         <Link to="portfolio">Portfolio</Link>
         <div className="headerTranslation">
-          <button onClick={() => changeLanguage("fr")}>FR</button>
-          <button onClick={() => changeLanguage("en")}>EN</button>
+          <button onClick={() => changeLanguage("fr")}>EN</button>
+          <button onClick={() => changeLanguage("en")}>FR</button>
         </div>
       </div>
     </header>

@@ -54,6 +54,7 @@
 
 .blogContent {
   height: 200px;
+  overflow: hidden;
 }
 
 .blogCardContent {
