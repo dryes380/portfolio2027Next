@@ -23,13 +23,13 @@ export const PortFolioData = [
   },
   {
     id: 3,
-    title: "Recipes food",
-    description: "Web site to search your favorite food",
-    stack: "React.js",
+    title: "Redux Movies",
+    description: "Web site to search your favorite movie",
+    stack: "React.js and Redux",
     picture:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJcM50pbjm2jERNPv_wH4FBHpAH55FEkYVpj2wJeP-SNnfS565mVxQ8odh0uhgwSIHlqs&usqp=CAU",
-    linkRedirect: "https://cookingcode.netlify.app/",
-    codeSource: "https://github.com/xp380/cooking",
+      "https://static.vecteezy.com/ti/vecteur-libre/p3/5502524-cinema-background-concept-movie-theatre-object-on-red-rideau-background-and-movie-time-with-electric-bulbs-frame-vector-illustration-gratuit-vectoriel.jpg",
+    linkRedirect: "https://redux-moviedb-api.netlify.app/",
+    codeSource: "https://github.com/xp380/react-redux-movies",
     date: "02/05/2023",
   },
 ];
