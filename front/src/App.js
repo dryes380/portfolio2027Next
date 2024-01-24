@@ -20,6 +20,8 @@ const App = () => {
       setLoading(false);
     }, 2000);
   }, []);
+
+  console.log('tets')
   return (
     <>
       <Header />
