@@ -8,6 +8,8 @@ import logo from "../logo.svg";
 import { Articles } from "../data/Articles";
 import FilterPills from "../helpers/FilterPills";
 import SortPills from "../helpers/SortPills";
+import Pagination from "../helpers/Pagination";
+import SearchBar from "../helpers/SearchBar";
 
 const Blog = () => {
   const articlesSortByTitle = [
@@ -19,7 +21,17 @@ const Blog = () => {
   const setPrivate = [...initial?.filter((data) => data.type === "private")];
 
   const [sortActive, setActive] = useState(false);
+  const [initialPerPage] = useState(3);
+  const [currentPage, setCurrentPage] = useState(1);
+
   const toggleSortHandler = () => setActive((a) => !a);
+  const indexOfLastPost = currentPage * initialPerPage;
+  const indexOfFirstPost = indexOfLastPost - initialPerPage;
+  const currentInitials = initial.slice(indexOfFirstPost, indexOfLastPost);
+
+  const handlePagination = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   useEffect(() => {
     if (sortActive) {
@@ -49,7 +61,7 @@ const Blog = () => {
               prevArrow={<div />}
               nextArrow={<div />}
             >
-              {articlesSortByTitle.slice(0, 3).map((data) => (
+              {articlesSortByTitle.slice(0, 6).map((data) => (
                 <div className="styleDefault">
                   <>
                     <h3 className="styleTopTitle">{data.title}</h3>
@@ -77,6 +89,7 @@ const Blog = () => {
                   setPrivate={setPrivate}
                   articlesSortByTitle={articlesSortByTitle}
                 />
+                <SearchBar initial={currentInitials} setInitial={setInitial} />
               </div>
               <div className="buttonSort">
                 <SortPills toggleSortHandler={toggleSortHandler} />
@@ -84,7 +97,7 @@ const Blog = () => {
             </div>
             <br />
             <div className="blogArticles">
-              {initial.map((data) => {
+              {currentInitials.map((data) => {
                 return (
                   <Card title={data.title} bordered extra={data.release}>
                     <div className="blogContent">{data.content.intro}</div>
@@ -103,6 +116,12 @@ const Blog = () => {
                 );
               })}
             </div>
+            <Pagination
+              length={initial.length}
+              initialPerPage={initialPerPage}
+              handlePagination={handlePagination}
+              currentPage={currentPage}
+            />
           </div>
         }
       ></Route>

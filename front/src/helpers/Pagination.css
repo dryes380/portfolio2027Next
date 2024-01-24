@@ -1,0 +1,14 @@
+.pagination {
+	text-align: center;
+	margin: 10px;
+}
+
+.paginationButton {
+	width: 45px;
+	height: 35px;
+	margin-left: 10px;	
+}
+
+.paginationButton:hover {
+	  background-position: -75px 0;
+}
